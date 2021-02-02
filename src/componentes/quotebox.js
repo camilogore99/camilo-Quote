@@ -1,5 +1,5 @@
 import Frases from '../quotes.json'
-import {FaQuoteLeft } from 'react-icons/fa'
+import Title from './tittle.js'
 import Logo from './logo.js'
 import { useState } from 'react'
 import {colorAlea}from './color'
@@ -20,8 +20,8 @@ const Quotebox =() => {
       
       return (
       <div>
-            <h2 className="title"><FaQuoteLeft /> {MostrarFrases} </h2>
-            <Author author={authorQuot}/>
+            < Title MostrarFrases={MostrarFrases}/>
+             <Author author={authorQuot}/>
             <div className="buttons">
                   <Logo color={color} />
                   <div className="button">
