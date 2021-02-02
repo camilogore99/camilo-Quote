@@ -3,12 +3,14 @@ import {FaQuoteLeft } from 'react-icons/fa'
 import Logo from './logo.js'
 import { useState } from 'react'
 import {colorAlea}from './color'
+import Button from './button.js'
+import Author from './author.js'
 
 const Quotebox =() => {
       const [state, setState] = useState(0);
       const [color, setColor] = useState(colorAlea()) 
       const MostrarFrases = Frases.quotes[state].quote;
-      const author = Frases.quotes[state].author
+      const authorQuot = Frases.quotes[state].author
       
       const ContCliclk = () => {
             setState( state +1)
@@ -19,11 +21,11 @@ const Quotebox =() => {
       return (
       <div>
             <h2 className="title"><FaQuoteLeft /> {MostrarFrases} </h2>
-            <p className="author">---- {author}</p>
+            <Author author={authorQuot}/>
             <div className="buttons">
                   <Logo color={color} />
                   <div className="button">
-                  <button style={{background:''+color+''}} className="buttonNext" onClick={ContCliclk}>Next Quote</button>
+                        < Button color={color} ContCliclk={ContCliclk}/>
                   </div>
             </div>
       </div>
